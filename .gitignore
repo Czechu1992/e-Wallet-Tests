@@ -1,0 +1,27 @@
+# Default ignored files
+/.idea/workspace.xml
+/compiler.xml
+/misc.xml
+/../pom.xml
+/uiDesigner.xml
+/vcs.xml
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+### Java ###
+*.class
+
+# Maven
+log/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
