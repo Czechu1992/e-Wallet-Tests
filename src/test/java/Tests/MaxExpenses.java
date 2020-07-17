@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 
 public class MaxExpenses extends TestConfig {
+
     @Test
     public void maxExpensesTest() {
 
@@ -22,6 +23,10 @@ public class MaxExpenses extends TestConfig {
         String amount3 = "700";
         String category3 = "rent";
 
+        String name4 = "Nagroda";
+        String amount4 = "1000";
+        String category4 = "nobel";
+
         double[] amountsArr = {Double.parseDouble(amount1), Double.parseDouble(amount2), Double.parseDouble(amount3)};
         Arrays.sort(amountsArr);
         String maxAmount;
@@ -34,6 +39,9 @@ public class MaxExpenses extends TestConfig {
         AplicationPage test = new AplicationPage();
 
         test.openTransactionForm()
+                .incomeFillNewTransactionForm(name4, amount4, category4)
+                .saveForm()
+                .openTransactionForm()
                 .expensesFillNewTransactionForm(name2, amount2, category2)
                 .saveForm()
                 .openTransactionForm()

@@ -33,6 +33,6 @@ public class AvailableMoneyTest extends TestConfig {
                 .openTransactionForm()
                 .incomeFillNewTransactionForm(name3, amount3, category3)
                 .saveForm()
-                .chechAvailebleMoney(finalAmount);
+                .checkAvailableMoney(finalAmount);
     }
 }

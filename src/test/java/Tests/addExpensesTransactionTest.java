@@ -16,6 +16,6 @@ public class addExpensesTransactionTest extends TestConfig {
         addTransaction.openTransactionForm()
                 .expensesFillNewTransactionForm(name, amount, category)
                 .saveForm()
-                .checkTransactionName(name);
+                .checkForAlertMsgDisplay();
     }
 }

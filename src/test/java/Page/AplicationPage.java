@@ -16,6 +16,9 @@ public class AplicationPage {
     @FindBy(className = "add-transaction")
     private WebElement addTransactionBtn;
 
+    @FindBy(className = "alert")
+    private WebElement alertMsg;
+
     @FindBy(id = "name")
     private WebElement nameInput;
 
@@ -105,11 +108,15 @@ public class AplicationPage {
         return this;
     }
 
+    public void checkForAlertMsgDisplay() {
+        Assert.assertTrue(alertMsg.isDisplayed());
+    }
+
     public void checkTransactionName(String name) {
         Assert.assertEquals(transactionName.getText(), name);
     }
 
-    public void chechAvailebleMoney(String amount) {
+    public void checkAvailableMoney(String amount) {
         Assert.assertEquals(availableMoney.getText(), (amount + " zł"));
     }
 
