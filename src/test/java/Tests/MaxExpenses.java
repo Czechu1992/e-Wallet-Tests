@@ -34,14 +34,14 @@ public class MaxExpenses extends TestConfig {
         AplicationPage test = new AplicationPage();
 
         test.openTransactionForm()
-        .expensesFillNewTransactionForm(name2, amount2, category2)
-        .saveForm()
-        .openTransactionForm()
-        .expensesFillNewTransactionForm(name3, amount3, category3)
-        .saveForm()
-        .openTransactionForm()
-        .expensesFillNewTransactionForm(name1, amount1, category1)
-        .saveForm()
-        .checkMaxExpense(maxAmount);
+                .expensesFillNewTransactionForm(name2, amount2, category2)
+                .saveForm()
+                .openTransactionForm()
+                .expensesFillNewTransactionForm(name3, amount3, category3)
+                .saveForm()
+                .openTransactionForm()
+                .expensesFillNewTransactionForm(name1, amount1, category1)
+                .saveForm()
+                .checkMaxExpense(maxAmount);
     }
 }

@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class MaxIncome extends TestConfig {
 
     @Test
-    public void maxIncomeTest(){
+    public void maxIncomeTest() {
         String name1 = "Nagroda";
         String amount1 = "400";
         String category1 = "nobel";
@@ -35,15 +35,15 @@ public class MaxIncome extends TestConfig {
 
         AplicationPage test = new AplicationPage();
         test.openTransactionForm()
-        .incomeFillNewTransactionForm(name1,amount1,category1)
-        .saveForm()
-        .openTransactionForm()
-        .incomeFillNewTransactionForm(name2,amount2,category2)
-        .saveForm()
-        .openTransactionForm()
-        .incomeFillNewTransactionForm(name3,amount3,category3)
-        .saveForm()
-        .checkMaxIncome(maxAmount);
+                .incomeFillNewTransactionForm(name1, amount1, category1)
+                .saveForm()
+                .openTransactionForm()
+                .incomeFillNewTransactionForm(name2, amount2, category2)
+                .saveForm()
+                .openTransactionForm()
+                .incomeFillNewTransactionForm(name3, amount3, category3)
+                .saveForm()
+                .checkMaxIncome(maxAmount);
 
     }
 }

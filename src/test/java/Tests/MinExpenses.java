@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class MinExpenses extends TestConfig {
     @Test
-    public void mniExpensesTest(){
+    public void mniExpensesTest() {
         String name1 = "Zapa";
         String amount1 = "80";
         String category1 = "food";
@@ -25,22 +25,22 @@ public class MinExpenses extends TestConfig {
         Arrays.sort(amountsArr);
         String minAmount;
         if (amountsArr[0] % 1 == 0) {
-            minAmount = ((int) amountsArr[0]*-1) + "";
+            minAmount = ((int) amountsArr[0] * -1) + "";
         } else {
-            minAmount = (amountsArr[0]*-1) + "";
+            minAmount = (amountsArr[0] * -1) + "";
         }
 
         AplicationPage test = new AplicationPage();
 
         test.openTransactionForm()
-        .expensesFillNewTransactionForm(name2, amount2, category2)
-        .saveForm()
-        .openTransactionForm()
-        .expensesFillNewTransactionForm(name3, amount3, category3)
-        .saveForm()
-        .openTransactionForm()
-        .expensesFillNewTransactionForm(name1, amount1, category1)
-        .saveForm()
-        .checkMinExpense(minAmount);
+                .expensesFillNewTransactionForm(name2, amount2, category2)
+                .saveForm()
+                .openTransactionForm()
+                .expensesFillNewTransactionForm(name3, amount3, category3)
+                .saveForm()
+                .openTransactionForm()
+                .expensesFillNewTransactionForm(name1, amount1, category1)
+                .saveForm()
+                .checkMinExpense(minAmount);
     }
 }

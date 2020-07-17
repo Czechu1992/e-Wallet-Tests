@@ -1,0 +1,61 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" verbose="1" name="e-Wallet App test" annotations="JDK" parallel="tests">
+
+    <test name="addSingleExpensesTransaction">
+        <classes>
+            <class name="Tests.addExpensesTransactionTest"/>
+        </classes>
+    </test>
+
+    <test name="addSingleIncomeTransaction">
+        <classes>
+            <class name="Tests.addIncomeTransactionTest"/>
+        </classes>
+    </test>
+
+    <test name="checkAvailableMoney">
+        <classes>
+            <class name="Tests.AvailableMoneyTest"/>
+        </classes>
+    </test>
+
+    <test name="checkAverageIncom">
+        <classes>
+            <class name="Tests.AverageIncomeTest"/>
+        </classes>
+    </test>
+
+    <test name="checkAverageExpenses">
+        <classes>
+            <class name="Tests.AverageExpensesTest"/>
+        </classes>
+    </test>
+
+    <test name="MaxIncome">
+        <classes>
+            <class name="Tests.MaxIncome"/>
+        </classes>
+    </test>
+
+    <test name="MaxExpenses">
+        <classes>
+            <class name="Tests.MaxExpenses"/>
+        </classes>
+    </test>
+
+    <test name="MinIncome">
+        <classes>
+            <class name="Tests.MinIncome"/>
+        </classes>
+    </test>
+
+    <test name="MinExpenses">
+        <classes>
+            <class name="Tests.MinExpenses"/>
+        </classes>
+    </test>
+
+
+
+</suite>
