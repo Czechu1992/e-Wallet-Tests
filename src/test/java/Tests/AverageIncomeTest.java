@@ -26,15 +26,15 @@ public class AverageIncomeTest extends TestConfig {
         String finalAmount = "" + Math.round(amountResult * 100.0) / 100.0;
 
         AplicationPage test = new AplicationPage();
-        test.openTransactionForm();
-        test.incomeFillNewTransactionForm(name1, amount1, category1);
-        test.saveForm();
-        test.openTransactionForm();
-        test.incomeFillNewTransactionForm(name2, amount2, category2);
-        test.saveForm();
-        test.openTransactionForm();
-        test.incomeFillNewTransactionForm(name3, amount3, category3);
-        test.saveForm();
-        test.checkAverageIncome(finalAmount);
+        test.openTransactionForm()
+        .incomeFillNewTransactionForm(name1, amount1, category1)
+        .saveForm()
+        .openTransactionForm()
+        .incomeFillNewTransactionForm(name2, amount2, category2)
+        .saveForm()
+        .openTransactionForm()
+        .incomeFillNewTransactionForm(name3, amount3, category3)
+        .saveForm()
+        .checkAverageIncome(finalAmount);
     }
 }

@@ -64,36 +64,45 @@ public class AplicationPage {
     @FindBy(className = "max-expenses-transaction-amount")
     private WebElement maxExpenseTransaction;
 
-    @FindBy(className = "min-income-transaction")
+    @FindBy(className = "min-income-transaction-amount")
     private WebElement minIncomeTransaction;
 
-    @FindBy(className = "min-expense-transaction")
+    @FindBy(className = "min-expenses-transaction-amount")
     private WebElement minExpenseTransaction;
 
     public AplicationPage() {
         PageFactory.initElements(getInstance(), this);
     }
 
-    public void openTransactionForm() {
+    public AplicationPage openTransactionForm() {
+
         addTransactionBtn.click();
+        return this;
     }
 
 
-    public void incomeFillNewTransactionForm(String name, String amount, String categoryName) {
+    public AplicationPage incomeFillNewTransactionForm(String name, String amount, String categoryName) {
         nameInput.sendKeys(name);
         amountInput.sendKeys(amount);
         incomeRadio.click();
         Select category = new Select(incomeCategorySelect);
         category.selectByValue(categoryName);
+        return this;
     }
 
-    public void expensesFillNewTransactionForm(String name, String amount, String categoryName) {
+    public AplicationPage expensesFillNewTransactionForm(String name, String amount, String categoryName) {
         nameInput.sendKeys(name);
         amountInput.sendKeys(amount);
         expensesRadio.click();
         Select category = new Select(expensesCategorySelect);
         category.selectByValue(categoryName);
+        return this;
+    }
 
+    public AplicationPage saveForm() {
+
+        saveBtn.click();
+        return this;
     }
 
     public void checkTransactionName(String name) {
@@ -116,12 +125,16 @@ public class AplicationPage {
         Assert.assertEquals(maxIncomeTransaction.getText(), (amount + " zł"));
     }
 
+    public void checkMinIncome(String amount) {
+        Assert.assertEquals(minIncomeTransaction.getText(), (amount + " zł"));
+    }
+
     public void checkMaxExpense(String amount) {
         Assert.assertEquals(maxExpenseTransaction.getText(), (amount + " zł"));
     }
 
-    public void saveForm() {
-        saveBtn.click();
+    public void checkMinExpense(String amount) {
+        Assert.assertEquals(minExpenseTransaction.getText(), (amount + " zł"));
     }
 
 

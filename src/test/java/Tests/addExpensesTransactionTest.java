@@ -13,9 +13,9 @@ public class addExpensesTransactionTest extends TestConfig {
         String category = "food";
 
         AplicationPage addTransaction = new AplicationPage();
-        addTransaction.openTransactionForm();
-        addTransaction.expensesFillNewTransactionForm(name, amount, category);
-        addTransaction.saveForm();
-        addTransaction.checkTransactionName(name);
+        addTransaction.openTransactionForm()
+                .expensesFillNewTransactionForm(name, amount, category)
+                .saveForm()
+                .checkTransactionName(name);
     }
 }

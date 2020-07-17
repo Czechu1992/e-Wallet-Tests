@@ -15,9 +15,9 @@ public class addIncomeTransactionTest extends TestConfig {
 
         AplicationPage addTransaction = new AplicationPage();
 
-        addTransaction.openTransactionForm();
-        addTransaction.incomeFillNewTransactionForm(name, amount, category);
-        addTransaction.saveForm();
-        addTransaction.checkTransactionName(name);
+        addTransaction.openTransactionForm()
+                .incomeFillNewTransactionForm(name, amount, category)
+                .saveForm()
+                .checkTransactionName(name);
     }
 }

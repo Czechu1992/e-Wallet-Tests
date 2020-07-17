@@ -24,15 +24,15 @@ public class AvailableMoneyTest extends TestConfig {
         String finalAmount = "" + amountResult;
 
         AplicationPage test = new AplicationPage();
-        test.openTransactionForm();
-        test.incomeFillNewTransactionForm(name1, amount1, category1);
-        test.saveForm();
-        test.openTransactionForm();
-        test.expensesFillNewTransactionForm(name2, amount2, category2);
-        test.saveForm();
-        test.openTransactionForm();
-        test.incomeFillNewTransactionForm(name3, amount3, category3);
-        test.saveForm();
-        test.chechAvailebleMoney(finalAmount);
+        test.openTransactionForm()
+                .incomeFillNewTransactionForm(name1, amount1, category1)
+                .saveForm()
+                .openTransactionForm()
+                .expensesFillNewTransactionForm(name2, amount2, category2)
+                .saveForm()
+                .openTransactionForm()
+                .incomeFillNewTransactionForm(name3, amount3, category3)
+                .saveForm()
+                .chechAvailebleMoney(finalAmount);
     }
 }

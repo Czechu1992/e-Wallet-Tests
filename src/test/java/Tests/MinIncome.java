@@ -4,13 +4,12 @@ import Config.TestConfig;
 import Page.AplicationPage;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class MaxIncome extends TestConfig {
+public class MinIncome extends TestConfig {
 
     @Test
-    public void maxIncomeTest(){
+    public void minIncomeTest(){
         String name1 = "Nagroda";
         String amount1 = "400";
         String category1 = "nobel";
@@ -26,12 +25,11 @@ public class MaxIncome extends TestConfig {
         double[] amountsArr = {Double.parseDouble(amount1), Double.parseDouble(amount2), Double.parseDouble(amount3)};
         Arrays.sort(amountsArr);
         String maxAmount;
-        if (amountsArr[amountsArr.length - 1] % 1 == 0) {
-            maxAmount = ((int) amountsArr[amountsArr.length - 1]) + "";
+        if (amountsArr[0] % 1 == 0) {
+            maxAmount = (int) amountsArr[0] + "";
         } else {
-            maxAmount = amountsArr[amountsArr.length - 1] + "";
+            maxAmount = amountsArr[0] + "";
         }
-
 
         AplicationPage test = new AplicationPage();
         test.openTransactionForm()
@@ -43,7 +41,6 @@ public class MaxIncome extends TestConfig {
         .openTransactionForm()
         .incomeFillNewTransactionForm(name3,amount3,category3)
         .saveForm()
-        .checkMaxIncome(maxAmount);
-
+        .checkMinIncome(maxAmount);
     }
 }

@@ -28,20 +28,18 @@ public class AverageExpensesTest extends TestConfig {
         String finalAmount = "" + Math.round(amountResult * 100.0) / 100.0;
 
         AplicationPage test = new AplicationPage();
-        test.openTransactionForm();
-        test.incomeFillNewTransactionForm(name1,amount1,category1);
-        test.saveForm();
-
-        test.openTransactionForm();
-        test.expensesFillNewTransactionForm(name2, amount2, category2);
-        test.saveForm();
-
-        test.openTransactionForm();
-        test.expensesFillNewTransactionForm(name3, amount3, category3);
-        test.saveForm();
-        test.openTransactionForm();
-        test.expensesFillNewTransactionForm(name4, amount4, category4);
-        test.saveForm();
-        test.checkAverageExpenses(finalAmount);
+        test.openTransactionForm()
+        .incomeFillNewTransactionForm(name1,amount1,category1)
+        .saveForm()
+        .openTransactionForm()
+        .expensesFillNewTransactionForm(name2, amount2, category2)
+        .saveForm()
+        .openTransactionForm()
+        .expensesFillNewTransactionForm(name3, amount3, category3)
+        .saveForm()
+        .openTransactionForm()
+        .expensesFillNewTransactionForm(name4, amount4, category4)
+        .saveForm()
+        .checkAverageExpenses(finalAmount);
     }
 }
