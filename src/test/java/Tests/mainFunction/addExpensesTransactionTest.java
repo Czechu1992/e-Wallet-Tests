@@ -1,4 +1,4 @@
-package Tests;
+package Tests.mainFunction;
 
 import Config.TestConfig;
 import Page.AplicationPage;

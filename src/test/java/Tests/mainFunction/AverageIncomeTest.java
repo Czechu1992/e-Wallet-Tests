@@ -1,16 +1,14 @@
-package Tests;
+package Tests.mainFunction;
 
 import Config.TestConfig;
 import Page.AplicationPage;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
-public class MaxIncome extends TestConfig {
+public class AverageIncomeTest extends TestConfig {
 
     @Test
-    public void maxIncomeTest() {
+    public void averageIncomeTest() {
+
         String name1 = "Nagroda";
         String amount1 = "400";
         String category1 = "nobel";
@@ -23,15 +21,9 @@ public class MaxIncome extends TestConfig {
         String amount3 = "40";
         String category3 = "bottle";
 
-        double[] amountsArr = {Double.parseDouble(amount1), Double.parseDouble(amount2), Double.parseDouble(amount3)};
-        Arrays.sort(amountsArr);
-        String maxAmount;
-        if (amountsArr[amountsArr.length - 1] % 1 == 0) {
-            maxAmount = ((int) amountsArr[amountsArr.length - 1]) + "";
-        } else {
-            maxAmount = amountsArr[amountsArr.length - 1] + "";
-        }
 
+        double amountResult = (Double.parseDouble(amount1) + Double.parseDouble(amount2) + Double.parseDouble(amount3)) / 3;
+        String finalAmount = "" + Math.round(amountResult * 100.0) / 100.0;
 
         AplicationPage test = new AplicationPage();
         test.openTransactionForm()
@@ -43,7 +35,6 @@ public class MaxIncome extends TestConfig {
                 .openTransactionForm()
                 .incomeFillNewTransactionForm(name3, amount3, category3)
                 .saveForm()
-                .checkMaxIncome(maxAmount);
-
+                .checkAverageIncome(finalAmount);
     }
 }

@@ -1,4 +1,4 @@
-package Tests;
+package Tests.mainFunction;
 
 import Config.TestConfig;
 import Page.AplicationPage;
@@ -6,11 +6,9 @@ import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
-public class MaxExpenses extends TestConfig {
-
+public class MinExpenses extends TestConfig {
     @Test
-    public void maxExpensesTest() {
-
+    public void mniExpensesTest() {
         String name1 = "Zapa";
         String amount1 = "80";
         String category1 = "food";
@@ -29,11 +27,11 @@ public class MaxExpenses extends TestConfig {
 
         double[] amountsArr = {Double.parseDouble(amount1), Double.parseDouble(amount2), Double.parseDouble(amount3)};
         Arrays.sort(amountsArr);
-        String maxAmount;
-        if (amountsArr[amountsArr.length - 1] % 1 == 0) {
-            maxAmount = ((int) amountsArr[amountsArr.length - 1] * -1) + "";
+        String minAmount;
+        if (amountsArr[0] % 1 == 0) {
+            minAmount = ((int) amountsArr[0] * -1) + "";
         } else {
-            maxAmount = (amountsArr[amountsArr.length - 1] * -1) + "";
+            minAmount = (amountsArr[0] * -1) + "";
         }
 
         AplicationPage test = new AplicationPage();
@@ -50,6 +48,6 @@ public class MaxExpenses extends TestConfig {
                 .openTransactionForm()
                 .expensesFillNewTransactionForm(name1, amount1, category1)
                 .saveForm()
-                .checkMaxExpense(maxAmount);
+                .checkMinExpense(minAmount);
     }
 }

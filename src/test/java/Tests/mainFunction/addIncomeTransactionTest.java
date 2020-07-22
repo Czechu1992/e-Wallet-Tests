@@ -1,11 +1,11 @@
-package Tests;
+package Tests.mainFunction;
 
 import Config.TestConfig;
 import Page.AplicationPage;
 import org.testng.annotations.Test;
 
 public class addIncomeTransactionTest extends TestConfig {
-    // Add single incom transaction Test
+    // Add single income transaction Test
 
     @Test
     public void addIncomeTransaction() {

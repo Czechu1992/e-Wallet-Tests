@@ -2,10 +2,13 @@ package Page;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+
+import java.util.List;
 
 import static Config.WebDriverSingledon.getInstance;
 
@@ -16,7 +19,7 @@ public class AplicationPage {
     @FindBy(className = "add-transaction")
     private WebElement addTransactionBtn;
 
-    @FindBy(className = "alert")
+    @FindBy(className = "alert1")
     private WebElement alertMsg;
 
     @FindBy(id = "name")
@@ -47,6 +50,9 @@ public class AplicationPage {
     @FindBy(className = "transaction-name")
     private WebElement transactionName;
 
+    @FindBy(className = "transaction-name")
+    private List<WebElement> allTransactionName;
+
     //Interface elements
     @FindBy(className = "available-money")
     private WebElement availableMoney;
@@ -73,12 +79,21 @@ public class AplicationPage {
     @FindBy(className = "min-expenses-transaction-amount")
     private WebElement minExpenseTransaction;
 
+    //Edit Transaction Elements
+    @FindBy(className = "edit-button")
+    private WebElement editFormAcceptBtn;
+
+    @FindBy(className = "edit")
+    private List<WebElement> editBtnList;
+
+    @FindBy(className = "alert2")
+    private WebElement alertMsg2;
+
     public AplicationPage() {
         PageFactory.initElements(getInstance(), this);
     }
 
     public AplicationPage openTransactionForm() {
-
         addTransactionBtn.click();
         return this;
     }
@@ -103,9 +118,45 @@ public class AplicationPage {
     }
 
     public AplicationPage saveForm() {
-
         saveBtn.click();
         return this;
+    }
+
+    public AplicationPage editTransaction(int index) {
+        editBtnList.get(index).click();
+        return this;
+    }
+
+    public AplicationPage editTransactionFillForm(String name, String amount, String categoryName) {
+        nameInput.clear();
+        nameInput.sendKeys(name);
+        amountInput.clear();
+        amountInput.sendKeys(amount);
+        incomeRadio.click();
+        Select category = new Select(incomeCategorySelect);
+        category.selectByValue(categoryName);
+        return this;
+    }
+
+    public AplicationPage editExpensesTransactionFillForm(String name, String amount, String categoryName) {
+        nameInput.clear();
+        nameInput.sendKeys(name);
+        amountInput.clear();
+        amountInput.sendKeys(amount);
+        expensesRadio.click();
+        Select category = new Select(expensesCategorySelect);
+        category.selectByValue(categoryName);
+        return this;
+    }
+
+
+    public AplicationPage editFormAccept() {
+        editFormAcceptBtn.click();
+        return this;
+    }
+
+    public void checkEditTransactionNewName(String newName, int index) {
+        Assert.assertEquals(allTransactionName.get(index).getText(), newName);
     }
 
     public void checkForAlertMsgDisplay() {

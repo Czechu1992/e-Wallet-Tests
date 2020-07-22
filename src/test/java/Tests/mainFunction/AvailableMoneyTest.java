@@ -1,4 +1,4 @@
-package Tests;
+package Tests.mainFunction;
 
 import Config.TestConfig;
 import Page.AplicationPage;
@@ -19,6 +19,7 @@ public class AvailableMoneyTest extends TestConfig {
         String name3 = "Z imprezy xD";
         String amount3 = "20";
         String category3 = "bottle";
+
 
         int amountResult = Integer.parseInt(amount1) - Integer.parseInt(amount2) + Integer.parseInt(amount3);
         String finalAmount = "" + amountResult;

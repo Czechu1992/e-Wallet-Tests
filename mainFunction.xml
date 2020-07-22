@@ -4,58 +4,57 @@
 
     <test name="addSingleExpensesTransaction">
         <classes>
-            <class name="Tests.addExpensesTransactionTest"/>
+            <class name="Tests.mainFunction.addExpensesTransactionTest"/>
         </classes>
     </test>
 
     <test name="addSingleIncomeTransaction">
         <classes>
-            <class name="Tests.addIncomeTransactionTest"/>
+            <class name="Tests.mainFunction.addIncomeTransactionTest"/>
         </classes>
     </test>
 
     <test name="checkAvailableMoney">
         <classes>
-            <class name="Tests.AvailableMoneyTest"/>
+            <class name="Tests.mainFunction.AvailableMoneyTest"/>
         </classes>
     </test>
 
     <test name="checkAverageIncom">
         <classes>
-            <class name="Tests.AverageIncomeTest"/>
+            <class name="Tests.mainFunction.AverageIncomeTest"/>
         </classes>
     </test>
 
     <test name="checkAverageExpenses">
         <classes>
-            <class name="Tests.AverageExpensesTest"/>
+            <class name="Tests.mainFunction.AverageExpensesTest"/>
         </classes>
     </test>
 
     <test name="MaxIncome">
         <classes>
-            <class name="Tests.MaxIncome"/>
+            <class name="Tests.mainFunction.MaxIncome"/>
         </classes>
     </test>
 
     <test name="MaxExpenses">
         <classes>
-            <class name="Tests.MaxExpenses"/>
+            <class name="Tests.mainFunction.MaxExpenses"/>
         </classes>
     </test>
 
     <test name="MinIncome">
         <classes>
-            <class name="Tests.MinIncome"/>
+            <class name="Tests.mainFunction.MinIncome"/>
         </classes>
     </test>
 
     <test name="MinExpenses">
         <classes>
-            <class name="Tests.MinExpenses"/>
+            <class name="Tests.mainFunction.MinExpenses"/>
         </classes>
     </test>
-
 
 
 </suite>
